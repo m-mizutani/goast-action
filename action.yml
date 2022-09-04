@@ -21,7 +21,7 @@ runs:
   image: "Dockerfile"
   args:
     - eval
-    - --policy="${{ inputs.policy }}"
-    - --format="${{ inputs.format }}"
-    - --output="${{ inputs.output }}"
+    - --policy=${{ inputs.policy }}
+    - --format=${{ inputs.format }}
+    - --output=${{ inputs.output }}
     - ${{ inputs.source }}
