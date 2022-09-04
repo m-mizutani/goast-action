@@ -10,6 +10,9 @@ inputs:
   output:
     description: "Output destination"
     default: "-"
+  source:
+    description: "Source code files or directory"
+    required: true
 outputs:
   time: # id of output
     description: "The time we greeted you"
@@ -18,6 +21,7 @@ runs:
   image: "Dockerfile"
   args:
     - eval
-    - --policy=${{ inputs.policy }}
-    - --format=${{ inputs.format }}
-    - --output=${{ inputs.output }}
+    - --policy="${{ inputs.policy }}"
+    - --format="${{ inputs.format }}"
+    - --output="${{ inputs.output }}"
+    - ${{ inputs.source }}
