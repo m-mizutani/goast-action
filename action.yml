@@ -10,6 +10,12 @@ inputs:
   output:
     description: "Output destination"
     default: "-"
+  root_only:
+    description: "Disable recursive inspection of all AST nodes"
+    default: "false"
+  fail:
+    description: "Exit with non-zero if violation detected"
+    default: "true"
   source:
     description: "Source code files or directory"
     required: true
@@ -24,4 +30,6 @@ runs:
     - --policy=${{ inputs.policy }}
     - --format=${{ inputs.format }}
     - --output=${{ inputs.output }}
+    - --root-only=${{ inputs.root_only }}
+    - --fail=${{ inputs.fail }}
     - ${{ inputs.source }}
