@@ -36,8 +36,9 @@ jobs:
 - `format`: Output format. Choose one from `text` and `json`. `json` schema is according to [reviewdog](https://github.com/reviewdog/reviewdog)
 - `output`: Output file
 - `source`: Directory or file to be analyzed
-- `root-only`: Disable recursive inspection of Node. Check only top level Node (basically `ast.File`)
+- `root_only`: Disable recursive inspection of Node. Check only top level Node (basically `ast.File`)
 - `fail`: Exit with non-zero code when violation is detected
+- `ignore_auto_generated`: Ignore auto generated codes if 'true' value passed.
 
 ## License
 

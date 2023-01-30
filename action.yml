@@ -16,6 +16,9 @@ inputs:
   fail:
     description: "Exit with non-zero if violation detected"
     default: "true"
+  ignore_auto_generated:
+    description: "Ignore auto generated codes if 'true' value passed."
+    default: "false"
   source:
     description: "Source code files or directory"
     required: true
@@ -32,4 +35,5 @@ runs:
     - --output=${{ inputs.output }}
     - --root-only=${{ inputs.root_only }}
     - --fail=${{ inputs.fail }}
+    - --ignore-auto-generated=${{ inputs.ignore_auto_generated }}
     - ${{ inputs.source }}
